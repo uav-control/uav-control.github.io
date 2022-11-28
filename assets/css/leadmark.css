@@ -11315,12 +11315,12 @@ textarea.form-control {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff5a29;
+  background: var(--secondary);
   border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff6e42;
+  background: var(--primary);
 }
 
 .table.v-align-center th, .table.v-align-center td {
