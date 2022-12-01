@@ -107,6 +107,7 @@
                     <h6 class="section-title mb-0">Blog 11.29.2022</h6>
                     <p >We got AprilTag recognition working, a key feature for our project. As you can see in the video, when we show one of the AprilTags we have configured the ROS node to recognize, it draws bounds around the edges of the tag, labels the center with the tag ID number, and we can show the pose of the tag in relation to the camera as a vector on rviz.</p>
                     <img src="assets/imgs/apriltag.gif" alt="" class="w-100 mt-3 shadow-sm">
+			<br>
 		    <p >To create this functionality we used the AprilTag ROS package to create an Apriltag-recognizing node. To set this up, we installed and built the Apriltag library, calibrated the camera and set up the camera node so it was compatible with the Apriltag ROS node, and supplied information about the Apriltags we want the system to recognize within the configuration file. We worked around an issue where the camera info was not publishing synchronously to the camera images and parsed out the pose information from the /tag_detections topic to publish it to a new topic we could view in rviz. </p>
                     
                 </div>
@@ -123,6 +124,7 @@
 <!--                             <p><b>Aliquid fuga sunt velit, temporibus molestias ab. Ipsa nesciunt totam, aliquid dignissimos.</b><br> -->
                             </p>
 			    <img src="assets/imgs/flydrone.gif" alt="" class="w-100 mt-3 shadow-sm">
+			    <br>
                             <p>To combat the problem of position drift we are going to use apriltag localization to provide position of the drone when it is in guided mode rather than manual. Tp do this we will override the global positioning information and use the position we compute relative to apriltags placed around the room. Our plan going forward is to work more on the apriltag localization and to figure out how to override the global position. </p>
                         </div>
                     </div>
