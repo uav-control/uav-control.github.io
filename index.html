@@ -109,7 +109,6 @@
                     <img src="assets/imgs/apriltag.gif" alt="" class="w-100 mt-3 shadow-sm">
 			<br/>
 			<br/>
-			<br/>
 		    <p >To create this functionality we used the AprilTag ROS package to create an Apriltag-recognizing node. To set this up, we installed and built the Apriltag library, calibrated the camera and set up the camera node so it was compatible with the Apriltag ROS node, and supplied information about the Apriltags we want the system to recognize within the configuration file. We worked around an issue where the camera info was not publishing synchronously to the camera images and parsed out the pose information from the /tag_detections topic to publish it to a new topic we could view in rviz. </p>
                     
                 </div>
@@ -125,6 +124,7 @@
                             <p>In other news, we are still having difficulties with flying the drone. The motor mapping was wrong causing strange and unstable behaviour when we tried to fly. After fixing the motor mapping, we realized that the optical flow sensor to provide relative position of the drone was not performing as we had hoped. We will have to rely on the other sensors (accelerometer and barometer) which do not provide as accurate position. </p>
                             </p>
 			    <img src="assets/imgs/flydrone.gif" alt="" class="w-100 mt-3 shadow-sm">
+			    <br/>
 			    <br/>
                             <p>To combat the problem of position drift we are going to use apriltag localization to provide position of the drone when it is in guided mode rather than manual. Tp do this we will override the global positioning information and use the position we compute relative to apriltags placed around the room. Our plan going forward is to work more on the apriltag localization and to figure out how to override the global position. </p>
                         </div>
@@ -144,6 +144,7 @@
 <!--                     <p >We got AprilTag </p>
                     <img src="assets/imgs/apriltag.gif" alt="" class="w-100 mt-3 shadow-sm">
 			<br>
+			<br/>
 		    <p >To create this </p> -->
                     
                 </div>
@@ -154,6 +155,7 @@
                             </p>
 			    <img src="assets/imgs/flydrone.gif" alt="" class="w-100 mt-3 shadow-sm">
 			    <br>
+			    <br/>
                             <p>To combat the problem </p> -->
                         </div>
                     </div>
