@@ -112,17 +112,18 @@
                 </div>
                 <div class="col-md-6 pl-md-5">
                     <div class="row">
-                        <div class="col-6">
+<!--                         <div class="col-6">
                             <img src="assets/imgs/about-1.jpg" alt="" class="w-100 shadow-sm">
                         </div>
                         <div class="col-6">
                             <img src="assets/imgs/about-2.jpg" alt="" class="w-100 shadow-sm">
-                        </div>
+                        </div> -->
                         <div class="col-12 mt-4">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iusto quidem laborum atque, sapiente ipsa excepturi fuga cum sed in assumenda eos quasi harum culpa laboriosam nulla, incidunt quae. Voluptatum.</p>
-                            <p><b>Aliquid fuga sunt velit, temporibus molestias ab. Ipsa nesciunt totam, aliquid dignissimos.</b><br>
+                            <p>In other news, we are still having difficulties with flying the drone. The motor mapping was wrong causing strange and unstable behaviour when we tried to fly. After fixing the motor mapping, we realized that the optical flow sensor to provide relative position of the drone was not performing as we had hoped. We will have to rely on the other sensors (accelerometer and barometer) which do not provide as accurate position. </p>
+<!--                             <p><b>Aliquid fuga sunt velit, temporibus molestias ab. Ipsa nesciunt totam, aliquid dignissimos.</b><br> -->
                             </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ut a dolorem, consectetur, eos suscipit consequatur magnam est dolore obcaecati adipisci expedita, vero, iste ducimus qui numquam animi facilis officia?</p>
+			    <img src="assets/imgs/flydrone.gif" alt="" class="w-100 mt-3 shadow-sm">
+                            <p>To combat the problem of position drift we are going to use apriltag localization to provide position of the drone when it is in guided mode rather than manual. Tp do this we will override the global positioning information and use the position we compute relative to apriltags placed around the room. Our plan going forward is to work more on the apriltag localization and to figure out how to override the global position. </p>
                         </div>
                     </div>
                 </div>
