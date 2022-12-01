@@ -109,7 +109,7 @@
                     <img src="assets/imgs/apriltag.gif" alt="" class="w-100 mt-3 shadow-sm">
 			<br/>
 			<br/>
-		    <p >We used the AprilTag ROS package to create the Apriltag-recognizing node. To set this up, we installed and built the Apriltag library, calibrated the camera and set up the camera node so it was compatible with the Apriltag ROS node, and supplied information about the Apriltags we want the system to recognize within the configuration file. We worked around an issue where the camera info was not publishing synchronously to the camera images and parsed pose information from the /tag_detections topic to publish it to a new topic we could view in rviz. </p>
+		    <p >We used the AprilTag ROS package to create the Apriltag-recognizing node. To set this up, we installed and built the Apriltag library, calibrated the camera and set up the camera node so it was compatible with the Apriltag ROS node, and supplied information about the Apriltags we want the system to recognize within the configuration file. We worked around the issue of the camera info not publishing synchronously to camera images, and parsed pose information from the /tag_detections topic to publish it to a new topic we could view in rviz. </p>
                     
                 </div>
                 <div class="col-md-6 pl-md-5">
