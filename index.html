@@ -107,14 +107,14 @@
                     <h6 class="section-title mb-0">Blog 11.29.2022</h6>
                     <p >We got AprilTag recognition working, a key feature for our project. As you can see in the video, when we show one of the AprilTags we have configured the ROS node to recognize, it draws bounds around the edges of the tag, labels the center with the tag ID number, and we can show the pose of the tag in relation to the camera as a vector on rviz.</p>
                     <img src="assets/imgs/apriltag.gif" alt="" class="w-100 mt-3 shadow-sm">
-			<br/>
-			<br/>
-		    <p >We used the AprilTag ROS package to create the Apriltag-recognizing node. To set this up, we installed and built the Apriltag library, calibrated the camera and set up the camera node so it was compatible with the Apriltag ROS node, and supplied information about the Apriltags we want the system to recognize within the configuration file. We worked around the issue of the camera info not publishing synchronously to camera images, and parsed pose information from the /tag_detections topic to publish it to a new topic we could view in rviz. </p>
+			        <br/>
+			        <br/>
+		            <p >We used the AprilTag ROS package to create the Apriltag-recognizing node. To set this up, we installed and built the Apriltag library, calibrated the camera and set up the camera node so it was compatible with the Apriltag ROS node, and supplied information about the Apriltags we want the system to recognize within the configuration file. We worked around the issue of the camera info not publishing synchronously to camera images, and parsed pose information from the /tag_detections topic to publish it to a new topic we could view in rviz. </p>
                     
                 </div>
                 <div class="col-md-6 pl-md-5">
                     <div class="row">
-<!--                         <div class="col-6">
+                        <!--                         <div class="col-6">
                             <img src="assets/imgs/about-1.jpg" alt="" class="w-100 shadow-sm">
                         </div>
                         <div class="col-6">
@@ -122,11 +122,11 @@
                         </div> -->
                         <div class="col-12 mt-4">
                             
-			    <img src="assets/imgs/flydrone.gif" alt="" class="w-100 mt-3 shadow-sm">
+			                <img src="assets/imgs/flydrone.gif" alt="" class="w-100 mt-3 shadow-sm">
 				
-			    <br/>
-			    <br/>
-				<p>In other news, we are still having difficulties with flying the drone. The motor mapping was wrong causing strange behaviour when we tried to fly. After fixing the motor mapping, we found out that the optical flow sensor to provide relative position of the drone was not performing as we had hoped. We will have to rely on the other sensors (accelerometer & barometer) which do not provide as accurate position. </p>
+			                <br/>
+			                <br/>
+				            <p>In other news, we are still having difficulties with flying the drone. The motor mapping was wrong causing strange behaviour when we tried to fly. After fixing the motor mapping, we found out that the optical flow sensor to provide relative position of the drone was not performing as we had hoped. We will have to rely on the other sensors (accelerometer & barometer) which do not provide as accurate position. </p>
                             </p>
                             <p>To combat the problem of position drift we are going to use apriltag localization to provide position of the drone when it is in guided mode rather than manual. To do this we will override the global positioning information and use the position we compute relative to apriltags placed around the room. Our plan going forward is to work more on the apriltag localization and to figure out how to override global position. </p>
                         </div>
@@ -143,7 +143,8 @@
             <div class="row justify-content-between">
                 <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
                     <h6 class="section-title mb-0">Blog 12.9.2022</h6>
-                    <p >Check back later for an update! </p>
+                    <p >We are successfully sending vision position data from the raspberry pi to the pixhawk flight controller! The raspberry pi camera publishes an image topic through the raspicam node, that can then be interpreted by the AprilTag ROS node and finally translated into information that mavros can read. We can see this information being read by the flight controller, but need to make sure the coordinate frame orientations are correct before flying. This is crucial because if the orientations are incorrect, the drone will become unstable and crash.
+                    </p>
                     
                 </div>
                 <div class="col-md-6 pl-md-5">
@@ -155,6 +156,11 @@
 			    <br>
 			    <br/>
                             <p>To combat the problem </p> -->
+                            <img src="assets/imgs/frames.gif" alt="" class="w-100 mt-3 shadow-sm">
+				
+			                <br/>
+			                <br/>
+				            <p>As we were checking frame orientations, we decided to re-orient to pi cam to sit on the bottom of the drone and face down, allowing it to detect apriltags on the floor. This decision was made based on the fact that when the drone is flying, the camera will always be pointed close to vertically downwards. Any changes in yaw will not result in the quadcopter losing sight of the apriltag, and minimal changes in position will keep the apriltag in view. </p>
                         </div>
                     </div>
                 </div>
@@ -372,7 +378,7 @@
 <!--                         <img src="assets/imgs/blog-1.jpg" alt="" class="card-img-top w-100"> -->
                         <div class="card-body">                         
                             <h6 class="card-title">Tigey</h6>
-                            <p>Mechanical Engineering Student</p>
+                            <p>Robotics Engineering Student</p>
 <!--                             <a href="javascript:void(0)" class="small text-muted">Go To The Article</a> -->
                         </div>
                     </div>
