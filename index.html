@@ -81,7 +81,7 @@
                         <div class="card-body">
                             <small class="text-primary font-weight-bold">02</small>
                             <h5 class="card-title mt-3">Optical Flow<h5>
-                            <p class="mb-0">Optical flow is a great way to receive quick odometry estimates indoors, but doesn't provide precise localization over longer time periods due to drift.</p>
+                            <p class="mb-0">Optical flow is a great way to receive quick odometry estimates indoors, but doesn't provide precise localization over longer time periods due to drift. It also only works well on textured floors.</p>
                         </div>
                     </div>
                 </div>
@@ -98,6 +98,75 @@
         </div>
     </section>
     <!-- End OF Service Section -->
+
+     <!-- System Architecture Section -->
+     <section class="section bg-primary" id="about">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-8 pl-md-5">
+                    
+                    <img src="assets/imgs/hardware_arch.png" alt="" class="w-100 mt-3 shadow-sm">
+                </div>
+                <div class="col-md-4 pr-md-5 mb-4 mb-md-0">
+                    <p class="text-white">
+                        The drone is based on the Ardupilot flight control software running on a Pixracer
+                        flight controller and autopilot. The pixracer uses a kalman filter to synthesize data
+                        from onboard sensors. As well as the common sensors (IMU and barometer), we add a Raspberry Pi
+                        that acts as another sensor, sending location data based on visual apriltag positioning.
+                    </p>
+                    <p class="text-white">
+                        The Raspberry Pi connects to a Pi cam that sits on the bottom of the drone, and to the Pixracer
+                        via a serial port. THe Raspberry Pi has wifi so that it can be controlled and programmed via ssh
+                        from a nearby computer.
+                    </p>
+                    <p class="text-white">
+                        We also experimented with GPS and Optical Flow systems to use in conjunction with the AprilTag
+                        localization. GPS doesn't work indoors, and the optical flow proved unreliable on untextured floors.
+                    </p>
+                </div>
+                
+            </div>              
+        </div>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-4 pr-md-5 mb-4 mb-md-0">
+                    <p class="text-white">
+                        The core component of this project is the software on the Raspberry Pi that collectively takes an
+                        image as input and outputs a mavlink message providing position to the drone. The first part of this is
+                        a node that outputs a calibrated image from the camera, based on a prexisting ubiquity robotics node.
+                    </p>
+                    <p class="text-white">
+                        Then, the ROS apriltag library helps identify any apriltags that the camera can see and establish relative
+                        position to the drone. We predetermine the positions of all apriltags relative to the world by using a tag
+                        'bundle', and then we can apply a series of tranformations that allows us to get the drone's position relative
+                        to the world.
+                    </p>
+                    
+                    
+                </div>
+                <div class="col-md-8 pl-md-5">
+                    
+                    <img src="assets/imgs/software_arch.png" alt="" class="w-100 mt-3 shadow-sm">
+                </div>
+                <div class="col-md-12 pl-md-5">
+                    <p class="text-white">
+                        Finally, this message needs to be converted from a pose into a mavlink vision position message. Another node
+                        takes care of this process, with the help of the MavROS package to translate the resulting ROS topic into a
+                        format that can be read by the autopilot.
+                    </p>
+                    <p class="text-white">
+                        The other major component of this project was setting up the autopilot to function with the vision position
+                        input. This is done by modifying the internal kalman filter to use input from the AprilTag vision system as
+                        well as internal sensors such as gyroscope and accelerometer. The vision system only provides an update rate
+                        of about 10Hz. While this is enough for a navigational positioning system, the drone needs much faster sensor
+                        input to remain stable. Fortunately this is provided by the accelerometer and gyro, which maintain effective
+                        odometry while the vision system provides slower absolute positions.
+                    </p>
+                </div>
+            </div>              
+        </div>
+    </section>
+    <!-- End OF Blog post 2 Section -->
 
     <!-- Blog post 1 Section -->
     <section class="section" id="about">
