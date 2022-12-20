@@ -214,7 +214,8 @@
                     <h6 class="section-title mb-0">Blog 12.9.2022</h6>
                     <p >We are successfully sending vision position data from the raspberry pi to the pixhawk flight controller! The raspberry pi camera publishes an image topic through the raspicam node, that can then be interpreted by the AprilTag ROS node and finally translated into information that mavros can read. We can see this information being read by the flight controller, but need to make sure the coordinate frame orientations are correct before flying. This is crucial because if the orientations are incorrect, the drone will become unstable and crash.
                     </p>
-                    
+	    	    <p>As we were checking frame orientations, we decided to re-orient to pi cam to sit on the bottom of the drone and face down, allowing it to detect apriltags on the floor. This decision was made based on the fact that when the drone is flying, the camera will always be pointed close to vertically downwards. Any changes in yaw will not result in the quadcopter losing sight of the apriltag, and minimal changes in position will keep the apriltag in view. 
+	            </p>
                 </div>
                 <div class="col-md-6 pl-md-5">
                     <div class="row">
@@ -225,12 +226,11 @@
 			    <br>
 			    <br/>
                             <p>To combat the problem </p> -->
-                            <img src="assets/imgs/frames.gif" alt="" class="w-100 mt-3 shadow-sm">
 				
-			                <br/>
-			                <br/>
-				            <p>As we were checking frame orientations, we decided to re-orient to pi cam to sit on the bottom of the drone and face down, allowing it to detect apriltags on the floor. This decision was made based on the fact that when the drone is flying, the camera will always be pointed close to vertically downwards. Any changes in yaw will not result in the quadcopter losing sight of the apriltag, and minimal changes in position will keep the apriltag in view. </p>
-                        </div>
+                            <img src="assets/imgs/frames.gif" alt="" class="w-100 mt-3 shadow-sm">
+<!-- 				<br/>
+				<br/> -->
+		        </div>
                     </div>
                 </div>
             </div>              
