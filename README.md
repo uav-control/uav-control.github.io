@@ -1,6 +1,8 @@
 # uav-control.github.io
 Website for CompRobo UAV control project
 
+Go to our [website here](https://uav-control.github.io)
+
 ## Final Demo Slides Content
 
 See [final demo slides](./final_demo_slides.pdf)
