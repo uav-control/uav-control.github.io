@@ -7,9 +7,9 @@ See [final demo slides](./final_demo_slides.pdf)
 
 ## Links
 
-Website: https://uav-control.github.io/
-Website Code: https://github.com/uav-control/uav-control.github.io/
-Project Code: https://github.com/TigeyJewellAlibhai/uav-control/
+Website: [uav-control.github.io](https://uav-control.github.io/)
+Website Code: [github.com/uav-control/uav-control.github.io](https://github.com/uav-control/uav-control.github.io/)
+Project Code: [github.com/TigeyJewellAlibhai/uav-control](https://github.com/TigeyJewellAlibhai/uav-control/)
 
 ## Ethics Statement
 
